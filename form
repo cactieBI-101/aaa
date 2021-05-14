@@ -1,0 +1,9 @@
+<h2> Подписка на рассыку </h2>
+                        <form action="/send" method="post">
+                            <p>
+                                {{form.username.label}} <br>
+                                {{form.username(size=30)}}
+                            </p>
+
+                            <p>{{form.submit()}}</p>
+                        </form>
