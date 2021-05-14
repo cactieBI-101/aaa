@@ -153,16 +153,47 @@
   small{
     color: #303030;
   }
-  .footer{ /* самый низ */
-    background: #3C6450;
-    color: #cecece;
+    .footer{ /* самый низ */
+    background: #CECECE;
+    color: #303030;
     font-size: 14px;
     padding: 60px 0 20px; /* отступы */
   }
   .footer p{
-    color: #cecece;
+    color: #303030;
   }
   .footer h3{
     color: #303030;
     margin-bottom: 20px; /* отступы */
   }
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+.footer-col-1{
+  flex-basis: 30%;
+}
+.footer-col-2{
+  flex: 1;
+  text-align: center;
+}
+.footer-col-2 img{
+  width: 180px;
+  margin-bottom: 20px;
+}
+.footer-col-3, .footer-col-4,{
+  flex-basis: 12%;
+  text-align: center;
+}
+ul{
+  list-style-type: none; /* маркировка списка */
+}
+.footer hr{
+  border: none;
+  background: #303030;
+  height: 1px;
+  margin: 20px o; 
+}
+.copyright{
+  text-align: center;
+}
