@@ -1,79 +1,168 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    font-family: 'Quicksand', sans-serif;
-}
-
-.logo{
+    margin: 0; /*отступа от каждого края элемента*/
+    padding: 0; /*устанавливает значение полей вокруг содержимого элемента*/
+    box-sizing: border-box; /*Применяется для изменения алгоритма расчета ширины и высоты элемента*/
+  }
+  body{
+    font-family: 'Quicksand', sans-serif; /*шрифт сайта*/
     background: #ECECEC;
-    width: 100%;
-}
-
-.navbar{
-    display: flex;
+  }
+  .navbar{
+    display: flex; /*определяет, как элемент должен быть показан*/
     align-items: center;
     padding: 20px;
-}
-nav{
-    flex: 1;
-    text-align: center;
-}
-nav ul{
-    display: inline-block;
-    list-style-type: none;
-}
-nav ul li{
-    display: inline-block;
-    margin-right: 20px;
-}
-a{
-    text-decoration: none;
+  }
+  nav{
+      flex: 1;
+      text-align: center;
+  }
+
+  nav ul{
+    display: inline-block; 
+    list-style-type: none; /*маркировка списка*/
+  }
+  nav ul li{
+    display: inline-block; /*обтекание*/
+    margin-right: 30px; /*отступ справа*/
+  }
+  a{ /*меню*/
+    text-decoration: none; /*подчеркивание*/ 
     color: #303030;
-}
-p{
+  }
+  p{
     color: #303030;
-}
-.container{
-    max-width: 1300px;
+  }
+  .container{
+    max-width: 1300px; /*максимальная ширина */
     margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-    background: #ECECEC;
-}
-.row{
+    padding-left: 25px; /* отступ слева*/
+    padding-right: 25px; /* отступ справа */
+  }
+  .row{
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-.col-2{
-    flex-basis: 50%;
-    min-width: 300px;
-}
-.col-2 img{
+    flex-wrap: wrap; /* меню в строку или в линию  */
+    justify-content: space-around; /* распределение пространства по сайту */
+  }
+  .col-2{
+    flex-basis: 100%; /* задает размер */
+    min-width: 300px; /* минимальная ширина */
+  }
+  .col-2 img{
     max-width: 100%;
-    padding: 50px 0;
-}
-.btn{
-    display: inline-block;
+    padding: 50px 0; /* поля сверху и снизу, слева и справа */
+  }
+  /* .col-2 h1{
+    font-size: 50px; 
+    line-height: 60px; 
+    margin: 25px 0;
+  } */
+  .btn{
+      display: inline-block;
+      background: #3C6450; /* цвет кнопки */
+      color: #ECECEC; /* цвет текста */
+      padding: 8px 30px; /* значение полей вокруг элемента */
+      margin: 30px 0;
+      border-radius: 30px; /* кнопка круглая */
+      transition: background 0.5s; /* устанавливает эффект перехода */
+  }
+  .btn:hover{
     background: #ECECEC;
-    padding: 8px 30px;
-    margin: 30px 0;
-    border-radius: 30px;
-}
-
-
-
-
-.header.row{
-    margin-top: 70px;
-}
-.Products{
+  }
+  .header{
+      background: content-box radial-gradient( #ECECEC, #ECECEC); /* фон */
+  }
+  .header .row{
+    margin-top: 70px; /* отступ сверху */
+  }
+  .categories{
     margin: 70px 0;
-}
-
-
+  }
+  .col-3{
+    flex-basis: 30%; /* размер */
+    min-width: 250px; /* минимальная ширина элемента */
+    margin-bottom: 30px; /* отступ от нижнего края элемента */
+  }
+  .col-3 img{
+    width: 100%; /* ширина картинки */
+  }
+  .small-container{
+    max-width: 100px; /* все эти пункты направлены на работу с отступами */
+    margin: auto;
+    padding-left: 25px; 
+    padding-right: 25px;
+  }
+  .col-4{
+    flex-basis: 25px;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px; /* отступ между картинками */
+    transition: transform 0.5s; /* картинки немного поднимаются при наведении */
+  }
+  .col-4 img{
+    width: 100%;
+  }
+  .title{ /* latest products */
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    margin:  auto 50px;
+    position: relative; /* позиция в документе */
+    line-height: 60px; /* ширина пространства между строками */
+    color: #303030;
+  }
+  .title::after{ /* черта под latest products */
+    content: '';
+    background: #3C6450;
+    width: 80px; /* длина */
+    height: 5px; /* высота */
+    border-radius: 5px; /* закругленные края */
+    position: absolute; /* позиция в документе */
+    bottom: 0; /* выше или ниже */
+    left: 50%; /* тип в середине */
+    transform: translatex(-50%); /* масштабирование, наклоны, сдвиг элемента */
+  }
+  h4{ /* цена и название продукта */
+    color: #303030;
+    font-weight: normal; /* ширина текста */
+  }
+  .col-4 p{
+    font-size: 14px; /* размер шрифта */
+  }
+  .col-4:hover{
+    transform: translatey(-5px); /* масштабирование, наклоны, сдвиг элемента */
+  }
+  
+  .offer{ /* about us */
+    background: content-box radial-gradient( #ECECEC, #ECECEC); /* фон */
+    margin: 80px;
+    padding: 30px 0;
+  }
+  .col-0{
+    flex-basis: 50%; /* задает размер */
+    min-width: 300px; /* минимальная ширина */
+  }
+  .col-0 img{
+    max-width: 100%;
+    padding: 50px 0; /* поля сверху и снизу, слева и справа */
+  }
+   .col-0 h1{
+    font-size: 50px; 
+    line-height: 60px; 
+    margin: 25px 0;
+  } 
+  small{
+    color: #303030;
+  }
+  .footer{ /* самый низ */
+    background: #3C6450;
+    color: #cecece;
+    font-size: 14px;
+    padding: 60px 0 20px; /* отступы */
+  }
+  .footer p{
+    color: #cecece;
+  }
+  .footer h3{
+    color: #303030;
+    margin-bottom: 20px; /* отступы */
+  }
