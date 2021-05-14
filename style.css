@@ -87,7 +87,7 @@
     width: 100%; /* ширина картинки */
   }
   .small-container{
-    max-width: 100px; /* все эти пункты направлены на работу с отступами */
+    max-width: 1000px; /* все эти пункты направлены на работу с отступами */
     margin: auto;
     padding-left: 25px; 
     padding-right: 25px;
