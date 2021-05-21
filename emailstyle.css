@@ -1,0 +1,22 @@
+*{
+    margin: 0; /*отступа от каждого края элемента*/
+    padding: 0; /*устанавливает значение полей вокруг содержимого элемента*/
+    box-sizing: border-box; /*Применяется для изменения алгоритма расчета ширины и высоты элемента*/
+  }
+  body{
+    font-family: 'Quicksand', sans-serif; /*шрифт сайта*/
+    background: #ECECEC;
+  }
+
+  .title{
+  margin: 150px;
+  text-align: center;
+  }
+  .title h1{
+    color: #303030;
+    font-size: 150px;
+  }
+  .title h2{
+    color: #303030;
+    font-size: 70px
+  }
