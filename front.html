@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>CACTIBI</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="header">
+        <div class="container">
+            <div class="navbar">
+              <div class="logo">
+                <span>CactiBI</span>
+           </div>
+            <nav>
+                <ul>
+                    <li><a href="#products">Our Products</a></li>
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+
+            <!-- <img src="images/126.jpg" width="30px"> -->
+        </div>
+        <div class="row">
+            <!-- <div class="col-2">
+                <h1>Give your cactus<br> A new style!</h1>
+                <p>Cactuses are<br> great and amazing</p>
+                <a href="" class="btn"> Explore now &#8594;</a>
+            </div> -->
+            <div class="col-2">
+                <img src="images/верхушка.jpeg">
+            </div>
+
+        </div>
+        </div>
+        </div>
+   <!--------------featured categories---------------->
+        <!-- <div class="categories">
+            <div class="small-container">
+                <div class="row">
+                <div class="col_3">
+                    <img src="images/il_1588xN.1598571145_amg4.jpg">
+                </div>
+                <div class="col_3">
+                    <img src="images/photo_2021-04-29_20-53-48 (3).jpg">
+                </div>
+                <div class="col_3">
+                    <img src="images/photo_2021-04-29_20-53-48 (5).jpg">
+                </div>
+
+
+            </div>
+            </div>
+
+        </div> -->
+
+<!--------------featured products---------------->
+        <div class="small-container">
+            <h2 class="title"><a name="products">Our Products</a></h2>
+            <div class="row">
+                <div class="col-4">
+                    <img src="images/photo_2021-04-29_20-53-47 (2).jpg">
+                    <h4>A really nice cacti</h4>
+                    <p>$15.00</p>
+                </div>
+                 <div class="col-4">
+                    <img src="/Users/elizavetamatveeva/PycharmProjects/flaskapp/images/photo_2021-04-29_20-53-48 (2).jpg">
+                    <h4>Cool cactus</h4>
+                    <p>$12.00</p>
+                </div>
+                 <div class="col-4">
+                    <img src="/User/elizavetamatveeva/PycharmProjects/flaskapp/images/photo_2021-04-29_20-53-48 (3).jpg">
+                    <h4>Nice plant</h4>
+                    <p>$25.00</p>
+                </div>
+                 <div class="col-4">
+                    <img src="images/il_1588xN.1598571145_amg4.jpg">
+                    <h4>The best cactus</h4>
+                    <p>$10.00</p>
+                </div>
+            </div>
+
+             <div class="row">
+                <div class="col-4">
+                    <img src="images/123.jpg">
+                    <h4>New set</h4>
+                    <p>$40.00</p>
+                </div>
+                 <div class="col-4">
+                    <img src="images/photo_2021-04-29_20-53-48.jpg">
+                    <h4>Awsome cacti</h4>
+                    <p>$12.00</p>
+                </div>
+                 <div class="col-4">
+                    <img src="/Users/elizavetamatveeva/PycharmProjects/flaskapp/images/125.jpg">
+                    <h4>SEt of suc</h4>
+                    <p>$35.00</p>
+                </div>
+                 <div class="col-4">
+                    <img src="images/photo_2021-04-29_20-53-48 (5).jpg">
+                    <h4>Succulent</h4>
+                    <p>$10.00</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="images/pic.jpg">
+                    <h4>New set</h4>
+                    <p>$40.00</p>
+                </div>
+                 <div class="col-4">
+                    <img src="images/photo_2021-04-29_20-53-48.jpg">
+                    <h4>Awsome cacti</h4>
+                    <p>$12.00</p>
+                </div>
+                 <div class="col-4">
+                    <img src="images/photo_2021-04-29_20-53-47.jpg">
+                    <h4>SEt of suc</h4>
+                    <p>$35.00</p>
+                </div>
+                 <div class="col-4">
+                    <img src="images/photo_2021-04-29_20-53-48 (4).jpg">
+                    <h4>Succulent</h4>
+                    <p>$10.00</p>
+                </div>
+            </div>
+        </div>
+<!-----------------offer------------>
+        <div class="offer">
+
+                <h2 class="title"><a name="about">About us</a></h2>
+                <div class="row">
+                     <div class="col-0">
+                         <h1>With Love!</h1>
+                         <p>CactiBI is a great choice for a cozy home.<br> day our plants degeneracy with love, will give you a sense of aesthetic pleasure and comtort.<br> We do our best to ensure that our client is always satistied.<br> We are always glad to see you.</p>
+                     </div>
+                    <div class="col-0">
+                        <img src="images/about us.jpg">
+                    </div>
+
+                </div>
+
+        </div>
+
+        <h2> Please enter your email address if you would like to receive our (rarely sent) newsletter </h2>
+                        <form action="/send" method="post">
+                            <p>
+                                {{form.email.label}} <br>
+                                {{form.email(size=30)}}
+                            </p>
+                             <p><input type="checkbox" name="a" value="By continuing you agree to our Privacy Policy"> By continuing you agree to our Privacy Policy</p>
+
+                            <p>{{form.submit()}}</p>
+
+                        </form>
+
+
+        <div class="footer">
+            <h2 class="title"><a name="contacts">Contacts</a></h2>
+            <div class="row">
+                <!-- <div class="col-2">
+                    <h1>Give your cactus<br> A new style!</h1>
+                    <p>Cactuses are<br> great and amazing</p>
+                    <a href="" class="btn"> Explore now &#8594;</a>
+                </div> -->
+                <div class="col-2">
+                    <img src="images/низ-removebg.png">
+                </div>
+
+            </div>
+
+            <div class="container">
+
+                <div class="row">
+
+                     <div class="footer-col-2">
+                        <h3>Address:</h3>
+                        <ul>
+                            <li>Lenin avenue, 15</li>
+                            <li>Chelyabinsk</li>
+
+                        </ul>
+
+
+                    </div>
+                     <div class="footer-col-3">
+                        <h3>Useful links</h3>
+                        <ul>
+                            <li>Email</li>
+                            <li></li>
+
+                        </ul>
+                    </div>
+                    <div class="footer-col-4">
+                        <h3>Follow us</h3>
+                       <ul>
+
+                            <li>Instagram</li>
+                            <li>Telegram</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <p>Copyright 2021</p>
+            </div>
+        </div>
+
+    </body>
+</html>
