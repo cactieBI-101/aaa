@@ -111,7 +111,7 @@ def send():
     message = 'You have subscribed to our email newsletters'
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login('elisaveta.veev@gmail.com', '28122002l.')
+    server.login('your email', 'password')
     server.sendmail('elisaveta.veev@gmail.com', email, message)
 
     if not email:
