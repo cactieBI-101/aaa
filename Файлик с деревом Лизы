@@ -1,0 +1,193 @@
+
+   
+class Leaf:
+    
+    def __init__(self, value: int, parent = None, left = None, right = None):
+        
+        self.value = value # хранимое значение
+        self.parent = parent # родитель
+        self.left = left # левый потомок
+        self.right = right # правый потомок
+
+        
+        
+     
+    def max_height(self):
+        if self is None:
+            return 'Нет дерева'
+        else:
+            height_right, height_left = 1, 1
+            if self.right:
+                height_right = self.right.max_height()+1
+            if self.left:
+                height_left = self.left.max_height()+1
+            return max(height_right, height_left)
+
+class Tree:
+    '''
+    Дерево
+    '''
+    def __init__(self, values):
+        self.root = Leaf(values[0])
+        for value in values[1:]:
+            
+            ### находим листок, к которому можно прицепиться
+            parent = self.find_empty(value)
+            
+            ### создаем листок
+            leaf = Leaf(value, parent)
+            
+            ### обновляем связи у листка, к которому цепляемся
+            if value < parent.value:
+                parent.left = leaf
+            else:
+                parent.right = leaf
+        
+    def find_empty(self, value) -> Leaf:
+        "Найти листок, который станет родителем новому листу со значением value"
+        
+        parent = self.root
+        while True:
+            
+            ### Проверяем в левую или правую ветку нам идти
+            if value < parent.value:
+                if parent.left is None:
+                    return parent
+                else:
+                    parent = parent.left
+            else:
+                if parent.right is None:
+                    return parent
+                else:
+                    parent = parent.right
+    
+    
+    
+    def new_order(self, leaf, mas = None):
+        if mas is None:
+            mas = []
+        if leaf is None:
+            return 
+        else:
+            self.new_order(leaf.left, mas)
+            mas.append(leaf.value)
+            self.new_order(leaf.right, mas)
+        return mas
+        
+    
+    
+    
+    def find(self, key):
+        return self._find_value(self.root, key)
+
+    def _find_value(self, root, key):
+        if root is None or root.value == key:
+            return root is not None
+        elif key < root.value:
+            return self._find_value(root.left, key)
+        else:
+            return self._find_value(root.right, key)
+    
+    
+#вывод высоты    
+    def get_height(self):
+        return self.root.max_height()  
+    
+    
+#    def search(self, value):
+#        parent = self.root
+#        while parent:
+#            if parent.value == value:
+#                return True
+#            elif parent.value > value:
+#                parent = parent.left
+#            else:
+#                parent = parent.right
+#        return False
+    
+#функция сортировки    
+    def in_order(self):
+            def _in_order(root):
+                if root is None:
+                    pass
+                else:
+                    _in_order(root.left)
+                    print(root.value)
+                    _in_order(root.right)
+            _in_order(self.root)
+    
+     
+
+       
+    def print_(self, leaf = None, tabs = 0,  dir = "root"):
+        "Выводим на экран структуру дерева"
+        
+        ### Если только вошли в рекурсию, то выводим содержимое корня
+        if leaf == None:
+            leaf = self.root
+        print(f"{'#'*tabs} {dir} {leaf.value}\n")
+        
+        ### идем по левой ветке листа в рекурсию
+        if leaf.left != None:
+            self.print_(leaf.left, tabs+3, dir="L")
+        
+        ### идем по правой ветке листа в рекурсию
+        if leaf.right != None:
+            self.print_(leaf.right, tabs+3, dir="R")
+    
+
+
+    def minl(self,leaf):
+        
+        while leaf.left is not None:
+            leaf = leaf.left
+            
+        return leaf
+  
+
+    def deleteNode(self,leaf, key):
+        if leaf is None:
+            return 
+
+        # ищем число, которое надо удалить
+        if key < leaf.value:
+            leaf.left = self.deleteNode(leaf.left, key)
+        elif key > leaf.value:
+            leaf.right = self.deleteNode(leaf.right, key)
+        else:
+            # если у листочка 1 потомок или их нет
+            if leaf.left is None:
+                temp = leaf.right
+                leaf.value = None
+                return temp
+
+            elif leaf.right is None:
+                temp = leaf.left
+                leaf.value = None
+                return temp
+
+            # если у листочка 2 потомка
+            temp = self.minl(leaf.right)
+
+            leaf.value = temp.value
+            leaf.right = self.deleteNode(leaf.right, temp.value)
+
+        return leaf
+    
+    def delete_all(self, leaf, key):
+        
+        m_all = self.new_order(leaf)
+        quantity = 0
+        
+        for i in m_all:
+            if i == key:
+                quantity += 1
+                
+        if quantity == 0:
+             self.deleteNode(leaf, key)
+         
+        for _ in range(quantity):
+            self.deleteNode(leaf, key)
+        self.print_()
+
+    
